@@ -7,19 +7,21 @@ type Props = {
 };
 
 const Card = styled.div`
-	padding: 1rem;
+	padding: 2rem;
+	border-radius: 2rem;
 	margin: 1rem;
 	background: #ececec;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	transition: 0.3s;
 	cursor: pointer;
 	img {
 		width: 300px;
 		height: 300px;
 	}
 	:hover {
-		background: #c9c9c9;
+		box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.4);
 	}
 `;
 

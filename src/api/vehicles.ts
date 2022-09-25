@@ -9,4 +9,9 @@ export const vehicles = [
 		transmission: 'manual',
 		registrationNumber: 'FH4H22',
 	},
+	{
+		type: 'car',
+		transmission: 'manual',
+		registrationNumber: '2E3R4T',
+	},
 ];

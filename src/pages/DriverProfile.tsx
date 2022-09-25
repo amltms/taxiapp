@@ -30,7 +30,7 @@ export const DriverProfile = () => {
 	useEffect(() => {
 		setDriver(drivers.find((driver) => driver.id === id));
 
-		// if this was from the backend, we would populate the vehicles with registration number
+		// if this was from the backend, we would populate the vehicles with registration number and users with user id
 		setFilteredRides(rides.filter((ride) => ride.driverId === id));
 	}, [id]);
 
@@ -51,12 +51,14 @@ export const DriverProfile = () => {
 					<th>ID</th>
 					<th>Date</th>
 					<th>Vehicle Registration Number</th>
+					<th>User ID</th>
 				</tr>
 				{filteredRides.map((ride) => (
 					<tr>
 						<td>{ride.id}</td>
 						<td>{ride.date}</td>
 						<td>{ride.registrationNumber}</td>
+						<td>{ride.userId}</td>
 					</tr>
 				))}
 			</Table>
