@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Drivers from './pages/Drivers';
+import Nav from './components/Nav';
+import { DriverProfile } from './pages/DriverProfile';
+import UsersList from './pages/UsersList';
+import styled from 'styled-components';
+import Search from './pages/Search';
 
+const Container = styled.div`
+	padding: 0 5rem;
+`;
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Nav />
+			<Container>
+				<Routes>
+					<Route path="/" element={<Drivers />} />
+					<Route path="/driver/:id" element={<DriverProfile />} />
+					<Route path="/users" element={<UsersList />} />
+					<Route path="/search" element={<Search />} />
+				</Routes>
+			</Container>
+		</div>
+	);
 }
 
 export default App;
